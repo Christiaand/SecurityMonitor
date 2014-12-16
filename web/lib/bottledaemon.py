@@ -20,7 +20,7 @@ class SSLWSGIRefServer(ServerAdapter):
         srv = make_server(self.host, self.port, handler, **self.options)
         srv.socket = ssl.wrap_socket (
          srv.socket,
-         certfile='/var/secmon/lib/server.pem',  # path to certificate
+         certfile='/var/secmon/server.pem',  # path to certificate
          server_side=True)
         srv.serve_forever()
 
